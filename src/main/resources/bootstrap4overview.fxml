@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- cucu -->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import java.lang.*?>
+<ScrollPane prefHeight="3000.0" prefViewportHeight="600.0" prefViewportWidth="800.0" prefWidth="1000.0"
+            style="-fx-background-color: white;" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <contextMenu>
+        <ContextMenu>
+            <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action"/>
+                <CheckMenuItem mnemonicParsing="false" text="check mi"/>
+                <RadioMenuItem mnemonicParsing="false" text="radio mi"/>
+                <SeparatorMenuItem mnemonicParsing="false"/>
+                <Menu mnemonicParsing="false" text="Unspecified Menu">
+                    <MenuItem mnemonicParsing="false" text="Action 1"/>
+                </Menu>
+            </items>
+        </ContextMenu>
+    </contextMenu>
+    <HTMLEditor
+                htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;"
+                prefHeight="600.0" prefWidth="860.0"/>
+        <HBox prefHeight="600.0" prefWidth="860.0" spacing="10.0" style="-fx-background-color: black;">
+            
+            <TabPane prefHeight="600.0" prefWidth="860.0" side="LEFT" styleClass="plain"
+                     tabClosingPolicy="ALL_TABS">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" prefHeight="60.0">
+                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
+                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
+                    </AnchorPane>
+                </Tab>
+            </TabPane>
+            
+        </HBox>
+     
+</ScrollPane>
