@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- cucu -->
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.HTMLEditor?>
+<?import java.lang.*?>
+<ScrollPane prefHeight="3000.0" prefViewportHeight="600.0"
+	prefViewportWidth="800.0" prefWidth="1000.0"
+	style="-fx-background-color: white;" stylesheets="@bootstrap3.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+
+	<HTMLEditor
+		htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;"
+		prefHeight="690.0" prefWidth="887.0" />
+	<HBox prefHeight="690.0" prefWidth="887.0" spacing="10.0"
+		style="-fx-background-color: black;">
+
+		<TabPane prefHeight="690.0" prefWidth="887.0" side="LEFT"
+			styleClass="plain">
+
+			<!-- TABUL CAUTARE ANGAJATI -->
+			<Tab text="Căutare angajați">
+				<AnchorPane minHeight="0.0" prefHeight="60.0">
+
+					<!-- ADAUGARE MENIU -->
+					<MenuBar layoutY="5">
+						<Menu mnemonicParsing="false" text="Fișier">
+							<MenuItem mnemonicParsing="false" text="Ieșire" />
+						</Menu>
+						<Menu mnemonicParsing="false" text="Salvare căutare">
+							<MenuItem mnemonicParsing="false"
+								text="Încărcare căutare" />
+						</Menu>
+						<Menu mnemonicParsing="false" text="Ajutor">
+							<MenuItem mnemonicParsing="false" text="Despre" />
+						</Menu>
+					</MenuBar>
+
+					<!-- Cautare -->
+					<HBox prefHeight="79.0" layoutX="0" layoutY="135">
+						<padding>
+							<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+						</padding>
+						<TextField promptText=".nume" styleClass="first">
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</TextField>
+						<TextField promptText=".prenume" styleClass="middle">
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</TextField>
+						<TextField promptText=".data naștere"
+							styleClass="middle">
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</TextField>
+						<TextField promptText=".cuvinte cheie" styleClass="last">
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</TextField>
+
+						<!-- Adăugare butoane căutare și ștergere -->
+						<Button mnemonicParsing="false" text="Căutare">
+							<styleClass>
+								<String fx:value="danger" />
+								<String fx:value="action-btn" />
+							</styleClass>
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</Button>
+
+						<Button mnemonicParsing="false" text="Ștergere ">
+							<styleClass>
+								<String fx:value="warning" />
+
+								<String fx:value="last" />
+							</styleClass>
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</Button>
+
+
+
+
+					</HBox>
+
+
+
+
+					<!-- Expenderul cu Vizualizare rezultate cautare -->
+					<HBox prefHeight="510.0" prefWidth="868.0" spacing="10.0"
+						layoutX="0" layoutY="180">
+						<VBox spacing="15.0">
+							<TitledPane prefHeight="510.0" styleClass="primary"
+								text="Vizualizare rezultate căutare">
+								<AnchorPane minHeight="0.0" minWidth="0.0"
+									prefHeight="20.0" prefWidth="845.0">
+
+
+
+									<!-- Rezultatele căutării sunt afișate în tabelul de mai jos -->
+									<TableView prefHeight="469.0" prefWidth="868.0"
+										tableMenuButtonVisible="true">
+										<columns>
+											<TableColumn prefWidth="150.0" text="Poza" />
+											<TableColumn minWidth="0.0" prefWidth="150.0"
+												text="Numele și prenumele" />
+											<TableColumn minWidth="0.0" prefWidth="500.0"
+												text="Sex">
+												<columns>
+													<TableColumn prefWidth="200.0" text="Masculin" />
+													<TableColumn prefWidth="200.0" text="Feminin" />
+												</columns>
+											</TableColumn>
+											<TableColumn prefWidth="150.0" text="Detalii" />
+										</columns>
+
+									</TableView>
+
+									<!-- Dacă sunt mai multe pagini cu rezultate atunci putem naviga 
+										între pagini -->
+									<Pagination pageCount="8" prefHeight="459.0"
+										prefWidth="867.0" />
+									<Separator prefWidth="200.0" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+								</AnchorPane>
+							</TitledPane>
+						</VBox>
+					</HBox>
+				</AnchorPane>
+			</Tab>
+
+			<!-- TABUL VIZUALIZARE DETALII -->
+			<Tab text="Vizualizare detalii">
+				<AnchorPane minHeight="0.0" minWidth="0.0"
+					prefHeight="72.0">
+					<Label layoutX="123.0" layoutY="26.0" text="" />
+				</AnchorPane>
+			</Tab>
+		</TabPane>
+
+	</HBox>
+</ScrollPane>

@@ -7,7 +7,7 @@
 <?import javafx.scene.web.HTMLEditor?>
 <?import java.lang.*?>
 <ScrollPane prefHeight="3000.0" prefViewportHeight="600.0" prefViewportWidth="800.0" prefWidth="1000.0"
-            style="-fx-background-color: white;" stylesheets="@bootstrap2.css" xmlns="http://javafx.com/javafx/8"
+            style="-fx-background-color: white;" stylesheets="@bootstrap3.css" xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1">
     <contextMenu>
         <ContextMenu>
@@ -22,108 +22,6 @@
             </items>
         </ContextMenu>
     </contextMenu>
-     <HTMLEditor
-                htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;"
-                prefHeight="200.0" prefWidth="506.0"/>
-        <HBox prefHeight="150.0" prefWidth="868.0" spacing="10.0" style="-fx-background-color: aqua;">
-            <TabPane prefHeight="100.0" prefWidth="200.0" styleClass="plain" tabClosingPolicy="ALL_TABS">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" prefHeight="60.0">
-                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
-                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
-                    </AnchorPane>
-                </Tab>
-            </TabPane>
-            <TabPane prefHeight="100.0" prefWidth="200.0" side="BOTTOM" styleClass="plain"
-                     tabClosingPolicy="ALL_TABS">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" prefHeight="60.0">
-                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
-                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
-                    </AnchorPane>
-                </Tab>
-            </TabPane>
-            <TabPane prefHeight="100.0" prefWidth="200.0" side="LEFT" styleClass="plain"
-                     tabClosingPolicy="ALL_TABS">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" prefHeight="60.0">
-                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
-                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
-                    </AnchorPane>
-                </Tab>
-            </TabPane>
-            <TabPane prefHeight="100.0" prefWidth="200.0" side="RIGHT" styleClass="plain"
-                     tabClosingPolicy="ALL_TABS">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" prefHeight="60.0">
-                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
-                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
-                    </AnchorPane>
-                </Tab>
-            </TabPane>
-        </HBox>
-        <HBox prefHeight="150.0" prefWidth="868.0" spacing="10.0" style="-fx-background-color: aqua;">
-            <TabPane prefHeight="114.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
-                                prefWidth="200.0"/>
-                </Tab>
-            </TabPane>
-            <TabPane prefHeight="114.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
-                                prefWidth="200.0"/>
-                </Tab>
-            </TabPane>
-            <TabPane prefHeight="114.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
-                                prefWidth="200.0"/>
-                </Tab>
-            </TabPane>
-            <TabPane prefHeight="114.0" prefWidth="200.0" side="RIGHT" tabClosingPolicy="UNAVAILABLE">
-                <Tab text="Tab 1">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
-                    </AnchorPane>
-                </Tab>
-                <Tab text="Tab 2">
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
-                                prefWidth="200.0"/>
-                </Tab>
-            </TabPane>
-        </HBox>
     <VBox layoutX="250.0" layoutY="-38.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
           AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <padding>
@@ -134,8 +32,14 @@
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
             </padding>
             <Button mnemonicParsing="false" styleClass="default" text="default"/>
-            <Button mnemonicParsing="false" styleClass="success" text=".success"/>
-            <Button mnemonicParsing="false" styleClass="primary" text=".primary"/>
+            <Button mnemonicParsing="false" style="-fx-background-insets: 0,0,-1,0;" styleClass="primary"
+                    text=".primary"/>
+            <Button mnemonicParsing="false" text=".success">
+                <styleClass>
+                    <String fx:value="success"/>
+                    <String fx:value="btn"/>
+                </styleClass>
+            </Button>
             <Button mnemonicParsing="false" text=".info">
                 <styleClass>
                     <String fx:value="info"/>
@@ -331,6 +235,7 @@
                 <TextArea prefHeight="50.0" prefWidth="50.0" promptText=".middle" styleClass="middle"/>
                 <TextField prefWidth="50.0" promptText=".last" styleClass="last"/>
             </ToolBar>
+            <Slider orientation="VERTICAL" value="70.0"/>
             <ToolBar prefHeight="44.0" prefWidth="300.0">
                 <TextField prefWidth="100.0"/>
                 <Separator orientation="VERTICAL" prefHeight="0.0" prefWidth="1.0"/>
@@ -599,6 +504,7 @@
                     <Insets left="10.0"/>
                 </HBox.margin>
             </TextField>
+            <Slider value="80.0"/>
         </HBox>
         <HBox prefHeight="79.0">
             <padding>
@@ -675,8 +581,109 @@
                 <MenuItem mnemonicParsing="false" text="About"/>
             </Menu>
         </MenuBar>
-       
-        <ProgressBar prefHeight="10.0" prefWidth="600.0" progress="0.86"/>
+        <HTMLEditor
+                htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;"
+                prefHeight="200.0" prefWidth="506.0"/>
+        <HBox prefHeight="150.0" prefWidth="868.0" spacing="10.0" style="-fx-background-color: aqua;">
+            <TabPane prefHeight="100.0" prefWidth="200.0" styleClass="plain" tabClosingPolicy="ALL_TABS">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" prefHeight="60.0">
+                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
+                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
+                    </AnchorPane>
+                </Tab>
+            </TabPane>
+            <TabPane prefHeight="100.0" prefWidth="200.0" side="BOTTOM" styleClass="plain"
+                     tabClosingPolicy="ALL_TABS">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" prefHeight="60.0">
+                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
+                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
+                    </AnchorPane>
+                </Tab>
+            </TabPane>
+            <TabPane prefHeight="100.0" prefWidth="200.0" side="LEFT" styleClass="plain"
+                     tabClosingPolicy="ALL_TABS">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" prefHeight="60.0">
+                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
+                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
+                    </AnchorPane>
+                </Tab>
+            </TabPane>
+            <TabPane prefHeight="100.0" prefWidth="200.0" side="RIGHT" styleClass="plain"
+                     tabClosingPolicy="ALL_TABS">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" prefHeight="60.0">
+                        <Label layoutX="22.0" layoutY="14.0" text=".plain"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0">
+                        <Label layoutX="123.0" layoutY="26.0" text="tab 2"/>
+                    </AnchorPane>
+                </Tab>
+            </TabPane>
+        </HBox>
+        <HBox prefHeight="150.0" prefWidth="868.0" spacing="10.0" style="-fx-background-color: aqua;">
+            <TabPane prefHeight="114.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                prefWidth="200.0"/>
+                </Tab>
+            </TabPane>
+            <TabPane prefHeight="114.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                prefWidth="200.0"/>
+                </Tab>
+            </TabPane>
+            <TabPane prefHeight="114.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                prefWidth="200.0"/>
+                </Tab>
+            </TabPane>
+            <TabPane prefHeight="114.0" prefWidth="200.0" side="RIGHT" tabClosingPolicy="UNAVAILABLE">
+                <Tab text="Tab 1">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <Label layoutX="50.0" layoutY="29.0" text="default tabpane"/>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Tab 2">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                prefWidth="200.0"/>
+                </Tab>
+            </TabPane>
+        </HBox>
+        <ProgressBar prefHeight="20.0" prefWidth="600.0" progress="0.86"/>
         <Label text=".success"/>
         <ProgressBar prefHeight="20.0" prefWidth="600.0" progress="0.69" styleClass="success"/>
         <Label text=".info"/>
