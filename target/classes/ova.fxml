@@ -13,6 +13,8 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.*?> 
+<?import javafx.collections.*?> 
 
 <ScrollPane prefHeight="3000.0" prefViewportHeight="600.0"
 	prefViewportWidth="800.0" prefWidth="1000.0"
@@ -193,20 +195,36 @@
 
 									<!-- Rezultatele căutării sunt afișate în tabelul de mai jos -->
 									<TableView prefHeight="469.0" prefWidth="868.0"
-										tableMenuButtonVisible="true">
+										tableMenuButtonVisible="true" fx:id="tbDetalii">
 										<columns>
-											<TableColumn prefWidth="150.0" text="Poza" />
 											<TableColumn minWidth="0.0" prefWidth="150.0"
-												text="Numele și prenumele" />
+												text="Id poza">
+												 <cellValueFactory><PropertyValueFactory property="idpoza" /> </cellValueFactory>
+											</TableColumn>
+											<TableColumn minWidth="0.0" prefWidth="150.0"
+												text="Numele" >
+												 <cellValueFactory><PropertyValueFactory property="numele" /> </cellValueFactory>
+											</TableColumn>
+											<TableColumn minWidth="0.0" prefWidth="150.0"
+												text="Prenumele" >
+												 <cellValueFactory><PropertyValueFactory property="prenumele" /> </cellValueFactory>
+											</TableColumn>
 											<TableColumn minWidth="0.0" prefWidth="500.0"
-												text="Sex">
+												text="Sex" >
 												<columns>
-													<TableColumn prefWidth="200.0" text="Masculin" />
-													<TableColumn prefWidth="200.0" text="Feminin" />
+													<TableColumn prefWidth="200.0" text="Masculin" >
+													 <cellValueFactory><PropertyValueFactory property="masculin" /> </cellValueFactory>
+										
+													</TableColumn>
+													<TableColumn prefWidth="200.0" text="Feminin" >
+													 <cellValueFactory><PropertyValueFactory property="feminin" /> </cellValueFactory>
+										
+													</TableColumn>
 												</columns>
 											</TableColumn>
 											<TableColumn prefWidth="150.0" text="Detalii" />
 										</columns>
+										
 
 									</TableView>
 

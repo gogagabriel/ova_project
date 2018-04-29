@@ -8,6 +8,7 @@ import com.ase.ova.utils.ro.FileOperation;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -25,6 +26,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -46,6 +48,34 @@ public class ovaController {
 
 	@FXML
 	private TextField txtNume;
+
+	@FXML
+	private TableView<Person> tbDetalii;
+
+	@FXML
+	private TextField idpoza;
+	
+	@FXML
+	private TextField numele;
+
+	@FXML
+	private TextField prenumele;
+	@FXML
+	private ImageView poza;
+	@FXML
+	private TextField sex;
+
+	@FXML
+	protected void addPerson(ActionEvent event) {
+		ObservableList<Person> data = tbDetalii.getItems();
+
+		data.add(new Person(idpoza.getText(), numele.getText(), prenumele.getText(), sex.getText()));
+
+	
+		numele.setText("");
+		prenumele.setText("");
+		sex.setText("");
+	}
 
 	@FXML
 	private TextField txtPrenume;
@@ -102,16 +132,16 @@ public class ovaController {
 	 */
 	public ovaController() {
 		// Create some sample data for the ComboBox and ListView.
-//		myComboBoxData.add(new Person("Hans", "Muster"));
-//		myComboBoxData.add(new Person("Ruth", "Mueller"));
-//		myComboBoxData.add(new Person("Heinz", "Kurz"));
-//		myComboBoxData.add(new Person("Cornelia", "Meier"));
-//		myComboBoxData.add(new Person("Werner", "Meyer"));
-//
-//		listViewData.add(new Person("Lydia", "Kunz"));
-//		listViewData.add(new Person("Anna", "Best"));
-//		listViewData.add(new Person("Stefan", "Meier"));
-//		listViewData.add(new Person("Martin", "Mueller"));
+		// myComboBoxData.add(new Person("Hans", "Muster"));
+		// myComboBoxData.add(new Person("Ruth", "Mueller"));
+		// myComboBoxData.add(new Person("Heinz", "Kurz"));
+		// myComboBoxData.add(new Person("Cornelia", "Meier"));
+		// myComboBoxData.add(new Person("Werner", "Meyer"));
+		//
+		// listViewData.add(new Person("Lydia", "Kunz"));
+		// listViewData.add(new Person("Anna", "Best"));
+		// listViewData.add(new Person("Stefan", "Meier"));
+		// listViewData.add(new Person("Martin", "Mueller"));
 	}
 
 	void showAbout() {
@@ -256,6 +286,8 @@ public class ovaController {
 		// Handle Button Cautare event.
 		btnCautare.setOnAction((event) -> {
 			cautare();
+			//fillTable();
+			addPerson(event);
 			System.out.println("ButtonCautare action\n");
 			// outputTextArea.appendText("Button Action\n");
 		});
@@ -386,6 +418,17 @@ public class ovaController {
 
 	}
 
+	private void fillTable() {
+		// TableView tab = new TableView();
+		// tbDetalii = new TableView();
+		Person person = new Person("10", "John", "Doe",
+				"01.12.1982");
+//		tbDetalii.getItems().add(person);
+		
+		
+
+	}
+
 	private void deschidereCautare() {
 		String[] s = fileOperation.open("cautare.txt");
 
@@ -438,7 +481,7 @@ public class ovaController {
 		GridPane grid = new GridPane();
 		grid.setHgap(10);
 		grid.setVgap(10);
-		
+
 		TextField username = new TextField();
 		username.setPromptText("Username");
 		PasswordField password = new PasswordField();

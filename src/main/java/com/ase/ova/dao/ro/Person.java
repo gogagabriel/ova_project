@@ -2,6 +2,8 @@ package com.ase.ova.dao.ro;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.property.SimpleObjectProperty;
+import javafx.scene.image.ImageView;
 
 /**
  * Simple model class for a person.
@@ -10,51 +12,66 @@ import javafx.beans.property.StringProperty;
  */
 public class Person {
 
-	private final StringProperty firstName;
-	private final StringProperty lastName;
-	private final StringProperty birthDate;
+	private final StringProperty idpoza;
+	private final StringProperty numele;
+	private final StringProperty prenumele;
+	private final StringProperty sex;
 
 	
-	public Person(String firstName, String lastName, String birthDate) {
-		this.firstName = new SimpleStringProperty(firstName);
-		this.lastName = new SimpleStringProperty(lastName);
-		this.birthDate = new SimpleStringProperty(birthDate);
+	public Person(String idpoza, String numele, String prenumele, String sex) {
+		this.idpoza = new SimpleStringProperty(idpoza);
+		this.numele = new SimpleStringProperty(numele);
+		this.prenumele = new SimpleStringProperty(prenumele);
+		this.sex = new SimpleStringProperty(sex);
 	}
 	
-	public String getBirthDate() {
-		return birthDate.get();
+	
+	public void setIdpoza(String idpoza) {
+		this.idpoza.set(idpoza);
 	}
 	
-	public void setBirthDate(String birthDate) {
-		this.birthDate.set(birthDate);
+	public String getIdpoza() {
+		return idpoza.get();
 	}
 	
-	public String getFirstName() {
-		return firstName.get();
+	public String getSex() {
+		return sex.get();
+	}
+	
+	public void setSex(String sex) {
+		this.sex.set(sex);
+	}
+	
+	public String getNumele() {
+		return numele.get();
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName.set(firstName);
+	public void setNumele(String numele) {
+		this.numele.set(numele);
 	}
 	
-	public StringProperty firstNameProperty() {
-		return firstName;
+	public StringProperty numeleProperty() {
+		return numele;
 	}
 
-	public String getLastName() {
-		return lastName.get();
+	public String getPrenumele() {
+		return prenumele.get();
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName.set(lastName);
+	public void setPrenumele(String prenumele) {
+		this.prenumele.set(prenumele);
 	}
 	
-	public StringProperty lastNameProperty() {
-		return lastName;
+	public StringProperty prenumeleProperty() {
+		return prenumele;
+	}
+	
+	public StringProperty idpozaProperty() {
+		return idpoza;
 	}
 	
 	@Override
 	public String toString() {
-		return getFirstName() + " " + getLastName();
+		return getNumele() + " " + getPrenumele();
 	}
 }
