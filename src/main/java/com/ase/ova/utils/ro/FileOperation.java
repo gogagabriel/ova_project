@@ -15,7 +15,7 @@ public class FileOperation {
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(yourfilename));
-			writer.write(yourfilename);
+			writer.write(content);
 
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
@@ -49,7 +49,7 @@ public class FileOperation {
 		String line = "";
 		line  = lines.get(lines.size()-1);
 		
-		s = line.split("###");
+		s = line.split("#");
 		return s;
 	}
 }

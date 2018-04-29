@@ -411,7 +411,7 @@ public class ovaController {
 
 		for (String s1 : s) {
 			if (contor < 3)
-				line += s1 + "###";
+				line += s1 + "#";
 			else
 				line += s1;
 			contor++;
