@@ -1,5 +1,9 @@
 package com.ase.ova.ro;
 
+import java.io.BufferedWriter;
+
+import com.ase.ova.utils.ro.FileOperation;
+
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -40,6 +44,18 @@ public class ovaController {
 	private Button btnCautare;
 
 	@FXML
+	private TextField txtNume;
+
+	@FXML
+	private TextField txtPrenume;
+
+	@FXML
+	private TextField txtDataNastere;
+
+	@FXML
+	private TextField txtCuvinteCheie;
+
+	@FXML
 	private Button btnStergere;
 
 	@FXML
@@ -65,11 +81,20 @@ public class ovaController {
 	private TextField myTextField;
 
 	@FXML
+	private MenuItem miSalvare;
+
+	@FXML
+	private MenuItem miDeschidere;
+
+	@FXML
 	private ListView<Person> myListView;
 	private ObservableList<Person> listViewData = FXCollections.observableArrayList();
 
 	@FXML
 	private TextArea outputTextArea;
+
+	private static final String EMPTY = "";
+	FileOperation fileOperation = new FileOperation();
 
 	/**
 	 * The constructor (is called before the initialize()-method).
@@ -136,6 +161,91 @@ public class ovaController {
 		dialog.show();
 	}
 
+	private void clearAll() {
+		txtNume.setText(EMPTY);
+		txtPrenume.setText(EMPTY);
+		txtDataNastere.setText(EMPTY);
+		txtCuvinteCheie.setText(EMPTY);
+	}
+
+	private void cautare() {
+		String stxtNume = "";
+		stxtNume = txtNume.getText();
+
+		String stxtPrenume = "";
+		stxtPrenume = txtPrenume.getText();
+
+		String stxtDataNastere = "";
+		stxtDataNastere = txtDataNastere.getText();
+
+		String stxtCuvinteCheie = "";
+		stxtCuvinteCheie = txtCuvinteCheie.getText();
+
+		String[] s = new String[4];
+		s[0] = stxtNume;
+		s[1] = stxtPrenume;
+		s[2] = stxtDataNastere;
+		s[3] = stxtCuvinteCheie;
+
+		if (!isValid(s)) {
+			showMessageNoDataToFind();
+			return;
+		}
+	}
+
+	private void showMessageNoDataToFind() {
+		// Create the custom dialog.
+		Dialog<Pair<String, String>> dialog = new Dialog<>();
+		dialog.setTitle("Informare");
+
+		dialog.setContentText("Trebuie specificat cel putin un criteriu\n\n de cautare");
+		dialog.setResizable(false);
+		dialog.getDialogPane().setPrefSize(380, 90);
+
+		// Set the button types.
+		ButtonType loginButtonType = new ButtonType("OK", ButtonData.OK_DONE);
+		dialog.getDialogPane().getButtonTypes().addAll(loginButtonType);
+
+		// Create the username and password labels and fields.
+		GridPane grid = new GridPane();
+		grid.setHgap(10);
+		grid.setVgap(10);
+		// grid.setPadding(new Insets(20, 150, 10, 10));
+
+		TextField username = new TextField();
+		username.setPromptText("Username");
+		PasswordField password = new PasswordField();
+		password.setPromptText("Password");
+
+		grid.add(new Label("Username:"), 0, 0);
+		grid.add(username, 1, 0);
+		grid.add(new Label("Password:"), 0, 1);
+		grid.add(password, 1, 1);
+
+		// Enable/Disable login button depending on whether a username was entered.
+		Node loginButton = dialog.getDialogPane().lookupButton(loginButtonType);
+		loginButton.setDisable(false);
+
+		// Do some validation (using the Java 8 lambda syntax).
+		username.textProperty().addListener((observable, oldValue, newValue) -> {
+			loginButton.setDisable(newValue.trim().isEmpty());
+		});
+		dialog.show();
+
+	}
+
+	private boolean isValid(String[] s) {
+		boolean found = false;
+		for (String s1 : s) {
+			if (s1.length() > 0) {
+				found = true;
+				break;
+			}
+		}
+
+		return found;
+	}
+
 	/**
 	 * Initializes the controller class. This method is automatically called after
 	 * the fxml file has been loaded.
@@ -144,13 +254,14 @@ public class ovaController {
 	private void initialize() {
 		// Handle Button Cautare event.
 		btnCautare.setOnAction((event) -> {
-			// showDialog();
+			cautare();
 			System.out.println("ButtonCautare action\n");
 			// outputTextArea.appendText("Button Action\n");
 		});
 
 		// Handle Button Stergere event.
 		btnStergere.setOnAction((event) -> {
+			clearAll();
 			System.out.println("ButtonStergere action\n");
 			// outputTextArea.appendText("Button Action\n");
 		});
@@ -164,6 +275,16 @@ public class ovaController {
 			Platform.exit();
 			System.exit(0);
 			System.out.println("Iesire action\n");
+		});
+
+		miSalvare.setOnAction((event) -> {
+			salvareCautare();
+			System.out.println("Salvare action\n");
+		});
+
+		miDeschidere.setOnAction((event) -> {
+			deschidereCautare();
+			System.out.println("Deschidere action\n");
 		});
 
 		//
@@ -261,6 +382,81 @@ public class ovaController {
 		// myTextField.setOnAction((event) -> {
 		// outputTextArea.appendText("TextField Action\n");
 		// });
+
+	}
+
+	private void deschidereCautare() {
+		String[] s = fileOperation.open("cautare.txt");
+
+		txtNume.setText(s[0]);
+		txtPrenume.setText(s[1]);
+		txtDataNastere.setText(s[2]);
+		txtCuvinteCheie.setText(s[3]);
+	}
+
+	private void salvareCautare() {
+		String line = "";
+		int contor = 0;
+
+		String[] s = new String[4];
+		s[0] = txtNume.getText();
+		s[1] = txtPrenume.getText();
+		s[2] = txtDataNastere.getText();
+		s[3] = txtCuvinteCheie.getText();
+
+		if (!isValid(s)) {
+			showEmptyFileCannotSaveMessage();
+			return;
+		}
+
+		for (String s1 : s) {
+			if (contor < 3)
+				line += s1 + "###";
+			else
+				line += s1;
+			contor++;
+		}
+
+		fileOperation.save("cautare.txt", line);
+	}
+
+	private void showEmptyFileCannotSaveMessage() {
+		// Create the custom dialog.
+		Dialog<Pair<String, String>> dialog = new Dialog<>();
+		dialog.setTitle("Nu se poate salva");
+
+		dialog.setContentText("Trebuie specificat cel putin un criteriu\n\n de cautare");
+		dialog.setResizable(false);
+		dialog.getDialogPane().setPrefSize(380, 90);
+
+		// Set the button types.
+		ButtonType loginButtonType = new ButtonType("OK", ButtonData.OK_DONE);
+		dialog.getDialogPane().getButtonTypes().addAll(loginButtonType);
+
+		// Create the username and password labels and fields.
+		GridPane grid = new GridPane();
+		grid.setHgap(10);
+		grid.setVgap(10);
+		
+		TextField username = new TextField();
+		username.setPromptText("Username");
+		PasswordField password = new PasswordField();
+		password.setPromptText("Password");
+
+		grid.add(new Label("Username:"), 0, 0);
+		grid.add(username, 1, 0);
+		grid.add(new Label("Password:"), 0, 1);
+		grid.add(password, 1, 1);
+
+		// Enable/Disable login button depending on whether a username was entered.
+		Node loginButton = dialog.getDialogPane().lookupButton(loginButtonType);
+		loginButton.setDisable(false);
+
+		// Do some validation (using the Java 8 lambda syntax).
+		username.textProperty().addListener((observable, oldValue, newValue) -> {
+			loginButton.setDisable(newValue.trim().isEmpty());
+		});
+		dialog.show();
 
 	}
 

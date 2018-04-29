@@ -67,8 +67,8 @@
 					<!-- ADAUGARE MENIU -->
 					<MenuBar layoutY="5" layoutX="700">
 						<Menu mnemonicParsing="false" text="Fișier">
-							<MenuItem mnemonicParsing="false" text="Deschidere" />
-							<MenuItem mnemonicParsing="false" text="Salvare căutare" />
+							<MenuItem mnemonicParsing="false" text="Deschidere" fx:id="miDeschidere"/>
+							<MenuItem mnemonicParsing="false" text="Salvare căutare" fx:id="miSalvare"/>
 							<MenuItem mnemonicParsing="false" text="Ieșire"
 								fx:id="miIesire" />
 						</Menu>
@@ -91,23 +91,23 @@
 						<padding>
 							<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 						</padding>
-						<TextField promptText=".nume" styleClass="transparent">
+						<TextField promptText=".nume" styleClass="transparent" fx:id="txtNume">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</TextField>
-						<TextField promptText=".prenume" styleClass="middle">
+						<TextField promptText=".prenume" styleClass="middle" fx:id="txtPrenume">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</TextField>
-						<TextField promptText=".data naștere"
+						<TextField promptText=".data naștere" fx:id="txtDataNastere"
 							styleClass="middle">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</TextField>
-						<TextField promptText=".cuvinte cheie" styleClass="last">
+						<TextField promptText=".cuvinte cheie" styleClass="last" fx:id="txtCuvinteCheie">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
