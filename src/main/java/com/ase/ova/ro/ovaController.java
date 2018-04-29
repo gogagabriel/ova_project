@@ -1,7 +1,9 @@
 package com.ase.ova.ro;
 
 import java.io.BufferedWriter;
+import java.util.List;
 
+import com.ase.ova.dao.ro.DAOFactory;
 import com.ase.ova.dao.ro.Person;
 import com.ase.ova.utils.ro.FileOperation;
 
@@ -9,7 +11,6 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -32,7 +33,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.stage.WindowEvent;
 import javafx.util.Pair;
 import javafx.util.StringConverter;
 
@@ -64,17 +64,32 @@ public class ovaController {
 	private ImageView poza;
 	@FXML
 	private TextField sex;
+	
+	DAOFactory dao_factory= DAOFactory.getInstance();
 
 	@FXML
 	protected void addPerson(ActionEvent event) {
+		
 		ObservableList<Person> data = tbDetalii.getItems();
 
-		data.add(new Person(idpoza.getText(), numele.getText(), prenumele.getText(), sex.getText()));
-
-	
-		numele.setText("");
-		prenumele.setText("");
-		sex.setText("");
+        List<Person> person = dao_factory.getEmployeesDAO();
+        
+        if(person == null) {
+			data.add(new Person("1","Goga","Gabriel","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
+			data.add(new Person("2","Goga","Ion","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
+			data.add(new Person("3","Goga","Popescu","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
+			data.add(new Person("4","Goga","Andreea","Feminin"));// numele.getText(), prenumele.getText(), sex.getText()));
+			data.add(new Person("5","Goga","Ion","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
+			
+			
+        }
+        else
+        {
+        	for(Person p : person) {
+        		if((p.getNumele() == numele.getText()) && (p.getPrenumele() == prenumele.getText() && p.getSex() == sex.getText()))
+        			data.add(p);
+        	}
+        }
 	}
 
 	@FXML
@@ -197,9 +212,12 @@ public class ovaController {
 		txtPrenume.setText(EMPTY);
 		txtDataNastere.setText(EMPTY);
 		txtCuvinteCheie.setText(EMPTY);
+		
+		tbDetalii.getItems().clear();
 	}
 
-	private void cautare() {
+	private void cautare(ActionEvent event) {
+		
 		String stxtNume = "";
 		stxtNume = txtNume.getText();
 
@@ -222,6 +240,8 @@ public class ovaController {
 			showMessageNoDataToFind();
 			return;
 		}
+		
+		addPerson(event);
 	}
 
 	private void showMessageNoDataToFind() {
@@ -285,9 +305,8 @@ public class ovaController {
 	private void initialize() {
 		// Handle Button Cautare event.
 		btnCautare.setOnAction((event) -> {
-			cautare();
-			//fillTable();
-			addPerson(event);
+			cautare(event);
+			
 			System.out.println("ButtonCautare action\n");
 			// outputTextArea.appendText("Button Action\n");
 		});

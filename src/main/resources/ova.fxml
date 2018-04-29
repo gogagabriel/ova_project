@@ -209,20 +209,16 @@
 												text="Prenumele" >
 												 <cellValueFactory><PropertyValueFactory property="prenumele" /> </cellValueFactory>
 											</TableColumn>
-											<TableColumn minWidth="0.0" prefWidth="500.0"
+											<TableColumn minWidth="0.0" prefWidth="150.0"
 												text="Sex" >
-												<columns>
-													<TableColumn prefWidth="200.0" text="Masculin" >
-													 <cellValueFactory><PropertyValueFactory property="masculin" /> </cellValueFactory>
-										
-													</TableColumn>
-													<TableColumn prefWidth="200.0" text="Feminin" >
-													 <cellValueFactory><PropertyValueFactory property="feminin" /> </cellValueFactory>
-										
-													</TableColumn>
-												</columns>
+												<cellValueFactory><PropertyValueFactory property="sex" /> </cellValueFactory>
 											</TableColumn>
-											<TableColumn prefWidth="150.0" text="Detalii" />
+											<TableColumn minWidth="0.0" prefWidth="300"
+												text="Detalii" >
+												
+												
+											</TableColumn>
+											
 										</columns>
 										
 

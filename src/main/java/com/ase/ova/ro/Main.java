@@ -1,6 +1,9 @@
 package com.ase.ova.ro;
 
+import com.ase.ova.dao.ro.Person;
+
 import javafx.application.Application;
+import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -8,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TableColumn;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -24,6 +28,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	@FXML
     private ImageView imageView;
+	TableColumn<Person, Person> unfriendCol = new TableColumn<>("Anti-social");
 	
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -31,6 +36,14 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("/ova.fxml"));
         //FXMLLoader loader = new FXMLLoader(Main.class.getResource("/bootstrap3overview.fxml"));
         loader.load();
+        
+        
+        
+        
+        
+      
+        
+        
 
         primaryStage.setScene(new Scene(loader.<ScrollPane>getRoot(), 900, 700));
 
