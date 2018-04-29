@@ -31,16 +31,21 @@
 						<Menu mnemonicParsing="false" text="Fișier">
 						    <MenuItem mnemonicParsing="false" text="Deschidere" />
 						    <MenuItem mnemonicParsing="false" text="Salvare căutare" />
-							<MenuItem mnemonicParsing="false" text="Ieșire" />
+							<MenuItem mnemonicParsing="false" text="Ieșire" fx:id="miIesire" />
 						</Menu>
 						
 						<Menu mnemonicParsing="false" text="Ajutor">
-							<MenuItem mnemonicParsing="false" text="Despre" />
+							<MenuItem mnemonicParsing="false" text="Despre" fx:id="miDespre"/>
 						</Menu>
 					</MenuBar>
 					
 					
-	
+					
+					
+					
+					
+					
+					
 
 					<!-- Cautare -->
 					<HBox prefHeight="79.0" layoutX="0" layoutY="135">
@@ -87,6 +92,8 @@
 		</children>
 	</AnchorPane>
 						 -->
+						 
+						 
 						
 						<Button mnemonicParsing="false" text="Căutare" fx:id="btnCautare" >
 							<styleClass>
