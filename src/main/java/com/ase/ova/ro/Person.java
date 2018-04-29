@@ -6,16 +6,27 @@ import javafx.beans.property.StringProperty;
 /**
  * Simple model class for a person.
  * 
- * @author Marco Jakob
+ * @author Goga Gabriel
  */
 public class Person {
 
 	private final StringProperty firstName;
 	private final StringProperty lastName;
+	private final StringProperty birthDate;
 
-	public Person(String firstName, String lastName) {
+	
+	public Person(String firstName, String lastName, String birthDate) {
 		this.firstName = new SimpleStringProperty(firstName);
 		this.lastName = new SimpleStringProperty(lastName);
+		this.birthDate = new SimpleStringProperty(birthDate);
+	}
+	
+	public String getBirthDate() {
+		return birthDate.get();
+	}
+	
+	public void setBirthDate(String birthDate) {
+		this.birthDate.set(birthDate);
 	}
 	
 	public String getFirstName() {

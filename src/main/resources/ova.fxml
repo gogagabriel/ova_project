@@ -67,8 +67,10 @@
 					<!-- ADAUGARE MENIU -->
 					<MenuBar layoutY="5" layoutX="700">
 						<Menu mnemonicParsing="false" text="Fișier">
-							<MenuItem mnemonicParsing="false" text="Deschidere" fx:id="miDeschidere"/>
-							<MenuItem mnemonicParsing="false" text="Salvare căutare" fx:id="miSalvare"/>
+							<MenuItem mnemonicParsing="false" text="Deschidere"
+								fx:id="miDeschidere" />
+							<MenuItem mnemonicParsing="false" text="Salvare căutare"
+								fx:id="miSalvare" />
 							<MenuItem mnemonicParsing="false" text="Ieșire"
 								fx:id="miIesire" />
 						</Menu>
@@ -91,23 +93,26 @@
 						<padding>
 							<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 						</padding>
-						<TextField promptText=".nume" styleClass="transparent" fx:id="txtNume">
+						<TextField promptText=".nume" styleClass="transparent"
+							fx:id="txtNume">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</TextField>
-						<TextField promptText=".prenume" styleClass="middle" fx:id="txtPrenume">
+						<TextField promptText=".prenume" styleClass="middle"
+							fx:id="txtPrenume">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</TextField>
-						<TextField promptText=".data naștere" fx:id="txtDataNastere"
-							styleClass="middle">
+						<TextField promptText=".data naștere"
+							fx:id="txtDataNastere" styleClass="middle">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</TextField>
-						<TextField promptText=".cuvinte cheie" styleClass="last" fx:id="txtCuvinteCheie">
+						<TextField promptText=".cuvinte cheie" styleClass="last"
+							fx:id="txtCuvinteCheie">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
@@ -145,13 +150,34 @@
 								<Insets right="-1.0" />
 							</HBox.margin>
 						</Button>
-
-
-
-
 					</HBox>
 
+					<!-- Imaginea care apare in cand se inchide expanderul -->
+					<StackPane id="StackPane" maxHeight="-Infinity"
+						maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+						prefHeight="-1.0" prefWidth="-1.0" layoutY="230" layoutX="-10"
+						style="-fx-background-color: burlywood;"
+						xmlns:fx="http://javafx.com/fxml/1"
+						xmlns="http://javafx.com/javafx/2.2">
+						<children>
+							<VBox alignment="CENTER"
+								style="-fx-background-color: cornsilk;">
+								<children>
 
+									<ImageView>
+										<image>
+											<Image url="/PozaDetalii2.png"/>
+										</image>
+										<viewport>
+											<Rectangle2D height="445" width="845.0" />
+										</viewport>
+									</ImageView>
+								</children>
+
+							</VBox>
+						</children>
+
+					</StackPane>
 
 
 					<!-- Expenderul cu Vizualizare rezultate cautare -->
@@ -189,23 +215,15 @@
 									<Pagination pageCount="8" prefHeight="459.0"
 										prefWidth="867.0" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 								</AnchorPane>
+
+
 							</TitledPane>
+
+
 						</VBox>
 					</HBox>
+
 				</AnchorPane>
 			</Tab>
 

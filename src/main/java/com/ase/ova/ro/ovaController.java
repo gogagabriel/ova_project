@@ -101,16 +101,16 @@ public class ovaController {
 	 */
 	public ovaController() {
 		// Create some sample data for the ComboBox and ListView.
-		myComboBoxData.add(new Person("Hans", "Muster"));
-		myComboBoxData.add(new Person("Ruth", "Mueller"));
-		myComboBoxData.add(new Person("Heinz", "Kurz"));
-		myComboBoxData.add(new Person("Cornelia", "Meier"));
-		myComboBoxData.add(new Person("Werner", "Meyer"));
-
-		listViewData.add(new Person("Lydia", "Kunz"));
-		listViewData.add(new Person("Anna", "Best"));
-		listViewData.add(new Person("Stefan", "Meier"));
-		listViewData.add(new Person("Martin", "Mueller"));
+//		myComboBoxData.add(new Person("Hans", "Muster"));
+//		myComboBoxData.add(new Person("Ruth", "Mueller"));
+//		myComboBoxData.add(new Person("Heinz", "Kurz"));
+//		myComboBoxData.add(new Person("Cornelia", "Meier"));
+//		myComboBoxData.add(new Person("Werner", "Meyer"));
+//
+//		listViewData.add(new Person("Lydia", "Kunz"));
+//		listViewData.add(new Person("Anna", "Best"));
+//		listViewData.add(new Person("Stefan", "Meier"));
+//		listViewData.add(new Person("Martin", "Mueller"));
 	}
 
 	void showAbout() {
