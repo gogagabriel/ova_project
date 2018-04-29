@@ -78,6 +78,14 @@
 	-fx-background-radius: 4 0 0 4;
 }
 
+.text-field.transparent,.text-area.transparent{
+    -fx-border-radius: 4 0 0 4;
+	-fx-background-radius: 4 0 0 4;
+	-fx-background-color:transparent;
+
+	
+}
+
 .split-menu-button.first > .arrow-button, .split-menu-button.middle > .arrow-button {
 	-fx-border-radius: 0;
 	-fx-background-radius: 0;

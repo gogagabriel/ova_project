@@ -7,10 +7,17 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.HTMLEditor?>
 <?import java.lang.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
 <ScrollPane prefHeight="3000.0" prefViewportHeight="600.0"
 	prefViewportWidth="800.0" prefWidth="1000.0"
 	style="-fx-background-color: white;" stylesheets="@bootstrap3.css"
-	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"  
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="com.ase.ova.ro.ovaController">
 
 	<HTMLEditor
@@ -24,35 +31,67 @@
 
 			<!-- TABUL CAUTARE ANGAJATI -->
 			<Tab text="Căutare angajați">
-				<AnchorPane minHeight="0.0" prefHeight="60.0" >
+				<AnchorPane minHeight="0.0" prefHeight="60.0">
+
+
+
+
+					<!-- Imaginea care apare in stackpanel -->
+					<StackPane id="StackPane" maxHeight="-Infinity"
+						maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+						prefHeight="-1.0" prefWidth="-1.0"
+						style="-fx-background-color: burlywood;"
+						xmlns:fx="http://javafx.com/fxml/1"
+						xmlns="http://javafx.com/javafx/2.2">
+						<children>
+							<VBox alignment="CENTER"
+								style="-fx-background-color: cornsilk;">
+								<children>
+
+									<ImageView>
+										<image>
+											<Image url="/asf2.png" />
+										</image>
+										<viewport>
+											<Rectangle2D height="328" width="845.0" />
+										</viewport>
+									</ImageView>
+								</children>
+
+							</VBox>
+						</children>
+
+					</StackPane>
+
 
 					<!-- ADAUGARE MENIU -->
-					<MenuBar layoutY="5">
+					<MenuBar layoutY="5" layoutX="700">
 						<Menu mnemonicParsing="false" text="Fișier">
-						    <MenuItem mnemonicParsing="false" text="Deschidere" />
-						    <MenuItem mnemonicParsing="false" text="Salvare căutare" />
-							<MenuItem mnemonicParsing="false" text="Ieșire" fx:id="miIesire" />
+							<MenuItem mnemonicParsing="false" text="Deschidere" />
+							<MenuItem mnemonicParsing="false" text="Salvare căutare" />
+							<MenuItem mnemonicParsing="false" text="Ieșire"
+								fx:id="miIesire" />
 						</Menu>
-						
+
+
+
 						<Menu mnemonicParsing="false" text="Ajutor">
-							<MenuItem mnemonicParsing="false" text="Despre" fx:id="miDespre"/>
+							<MenuItem mnemonicParsing="false" style="danger"
+								text="Despre" fx:id="miDespre">
+
+							</MenuItem>
 						</Menu>
 					</MenuBar>
-					
-					
-					
-					
-					
-					
-					
-					
+
+
+
 
 					<!-- Cautare -->
-					<HBox prefHeight="79.0" layoutX="0" layoutY="135">
+					<HBox prefHeight="85.0" layoutX="0" layoutY="145">
 						<padding>
 							<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
 						</padding>
-						<TextField promptText=".nume" styleClass="first">
+						<TextField promptText=".nume" styleClass="transparent">
 							<HBox.margin>
 								<Insets right="-1.0" />
 							</HBox.margin>
@@ -76,26 +115,16 @@
 
 						<!-- Adăugare butoane căutare și ștergere -->
 
-	<!-- <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320"
-		xmlns:fx="http://javafx.com/fxml" fx:controller="src/Controller">
-		<children>
-		<Button mnemonicParsing="false" text="Căutare" onAction="#test" >
-							<styleClass>
-								<String fx:value="danger" />
-								<String fx:value="action-btn" />
-							</styleClass>
-							<HBox.margin>
-								<Insets right="-1.0" />
-							</HBox.margin>
-						</Button>
-			
-		</children>
-	</AnchorPane>
-						 -->
-						 
-						 
-						
-						<Button mnemonicParsing="false" text="Căutare" fx:id="btnCautare" >
+						<!-- <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml" 
+							fx:controller="src/Controller"> <children> <Button mnemonicParsing="false" 
+							text="Căutare" onAction="#test" > <styleClass> <String fx:value="danger" 
+							/> <String fx:value="action-btn" /> </styleClass> <HBox.margin> <Insets right="-1.0" 
+							/> </HBox.margin> </Button> </children> </AnchorPane> -->
+
+
+
+						<Button mnemonicParsing="false" text="Căutare"
+							fx:id="btnCautare">
 							<styleClass>
 								<String fx:value="danger" />
 								<String fx:value="action-btn" />
@@ -105,7 +134,8 @@
 							</HBox.margin>
 						</Button>
 
-						<Button mnemonicParsing="false" text="Ștergere " fx:id="btnStergere">
+						<Button mnemonicParsing="false" text="Ștergere "
+							fx:id="btnStergere">
 							<styleClass>
 								<String fx:value="warning" />
 
@@ -126,7 +156,7 @@
 
 					<!-- Expenderul cu Vizualizare rezultate cautare -->
 					<HBox prefHeight="510.0" prefWidth="868.0" spacing="10.0"
-						layoutX="0" layoutY="180">
+						layoutX="0" layoutY="187">
 						<VBox spacing="15.0">
 							<TitledPane prefHeight="510.0" styleClass="primary"
 								text="Vizualizare rezultate căutare">
@@ -158,7 +188,7 @@
 										între pagini -->
 									<Pagination pageCount="8" prefHeight="459.0"
 										prefWidth="867.0" />
-									<Separator prefWidth="200.0" />
+
 
 
 

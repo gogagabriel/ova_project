@@ -34,10 +34,7 @@ public class Main extends Application {
 
         primaryStage.setScene(new Scene(loader.<ScrollPane>getRoot(), 900, 700));
 
-        primaryStage.show();
-        
-        
-      
+        primaryStage.show(); 
     }
 
 	
