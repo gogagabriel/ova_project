@@ -107,6 +107,7 @@ public class DAOFactory {
 				String nume = rs.getString("last_name");
 				String prenume = rs.getString("first_name");
 				String sex = rs.getString("gender");
+				//String dataNasterii = rs.getDate("birth_date").toString();
 				person = new Person(String.valueOf(contor), nume, prenume, sex);
 				listPerson.add(person);
 				contor ++ ;

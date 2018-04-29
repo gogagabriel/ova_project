@@ -242,10 +242,41 @@
 			</Tab>
 
 			<!-- TABUL VIZUALIZARE DETALII -->
-			<Tab text="Vizualizare detalii">
+			<Tab text="Echipa">
 				<AnchorPane minHeight="0.0" minWidth="0.0"
 					prefHeight="72.0">
-					<Label layoutX="123.0" layoutY="26.0" text="" />
+					<Label layoutX="0" layoutY="26.0" text="Realizatori"  />
+					<Label layoutX="0" layoutY="46.0" text="- Goga Octavian Gabriel" />
+					<Label layoutX="0" layoutY="66.0" text="- Ciucă Diana" />
+					<Label layoutX="0" layoutY="86.0" text="- Mîrț Alina" />
+					<Label layoutX="0" layoutY="106.0" text="- Cocu Alexandra" />
+						<!-- Imaginea care apare in cand se inchide expanderul -->
+					<StackPane id="StackPane" maxHeight="-Infinity"
+						maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+						prefHeight="-1.0" prefWidth="-1.0" layoutY="230" layoutX="-10"
+						style="-fx-background-color: burlywood;"
+						xmlns:fx="http://javafx.com/fxml/1"
+						xmlns="http://javafx.com/javafx/2.2">
+						<children>
+							<VBox alignment="CENTER"
+								style="-fx-background-color: cornsilk;">
+								<children>
+
+									<ImageView>
+										<image>
+											<Image url="/PozaDetalii2.png"/>
+										</image>
+										<viewport>
+											<Rectangle2D height="445" width="845.0" />
+										</viewport>
+									</ImageView>
+								</children>
+
+							</VBox>
+						</children>
+
+					</StackPane>
+					
 				</AnchorPane>
 			</Tab>
 		</TabPane>

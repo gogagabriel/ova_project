@@ -1,7 +1,9 @@
 package com.ase.ova.ro;
 
 import java.io.BufferedWriter;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.ase.ova.dao.ro.DAOFactory;
 import com.ase.ova.dao.ro.Person;
@@ -54,7 +56,7 @@ public class ovaController {
 
 	@FXML
 	private TextField idpoza;
-	
+
 	@FXML
 	private TextField numele;
 
@@ -64,32 +66,52 @@ public class ovaController {
 	private ImageView poza;
 	@FXML
 	private TextField sex;
-	
-	DAOFactory dao_factory= DAOFactory.getInstance();
+
+	DAOFactory dao_factory = DAOFactory.getInstance();
 
 	@FXML
 	protected void addPerson(ActionEvent event) {
-		
-		ObservableList<Person> data = tbDetalii.getItems();
 
-        List<Person> person = dao_factory.getEmployeesDAO();
-        
-        if(person == null) {
-			data.add(new Person("1","Goga","Gabriel","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
-			data.add(new Person("2","Goga","Ion","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
-			data.add(new Person("3","Goga","Popescu","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
-			data.add(new Person("4","Goga","Andreea","Feminin"));// numele.getText(), prenumele.getText(), sex.getText()));
-			data.add(new Person("5","Goga","Ion","Masculin"));// numele.getText(), prenumele.getText(), sex.getText()));
-			
-			
-        }
-        else
-        {
-        	for(Person p : person) {
-        		if((p.getNumele() == numele.getText()) && (p.getPrenumele() == prenumele.getText() && p.getSex() == sex.getText()))
-        			data.add(p);
-        	}
-        }
+		ObservableList<Person> data = tbDetalii.getItems();
+		String numeCautare = "";
+		String prenumeCautare = "";
+		String dataNastere = "";
+		String cuvinteCheie = "";
+
+		numeCautare = txtNume.getText() == "" ? "" : txtNume.getText();
+		prenumeCautare = txtPrenume.getText() == "" ? "" : txtPrenume.getText();
+		dataNastere = txtDataNastere.getText() == "" ? "" : txtDataNastere.getText();
+		cuvinteCheie = txtCuvinteCheie.getText() == "" ? "" : txtCuvinteCheie.getText();
+
+		List<Person> person = dao_factory.getEmployeesDAO();
+
+		if (person == null) {
+			data.add(new Person("1", "Goga", "Gabriel", "Masculin"));// numele.getText(), prenumele.getText(),
+																		// sex.getText()));
+			data.add(new Person("2", "Goga", "Ion", "Masculin"));// numele.getText(), prenumele.getText(),
+																	// sex.getText()));
+			data.add(new Person("3", "Goga", "Popescu", "Masculin"));// numele.getText(), prenumele.getText(),
+																		// sex.getText()));
+			data.add(new Person("4", "Goga", "Andreea", "Feminin"));// numele.getText(), prenumele.getText(),
+																	// sex.getText()));
+			data.add(new Person("5", "Goga", "Ion", "Masculin"));// numele.getText(), prenumele.getText(),
+																	// sex.getText()));
+
+		}
+
+		List<Person> filteredData = new ArrayList<Person>();
+		if (prenumeCautare.length() > 0) {
+			person = person.stream().filter(p -> p.getPrenumele().contains(txtPrenume.getText())).collect(Collectors.toList());
+		}
+		// Create a Stream from the personList
+		if (numeCautare.length() > 0) {
+			person = person.stream().filter(p -> p.getNumele().contains(txtNume.getText())).collect(Collectors.toList());
+		}
+
+		for (Person p : person) {
+			data.add(p);
+		}
+
 	}
 
 	@FXML
@@ -212,12 +234,12 @@ public class ovaController {
 		txtPrenume.setText(EMPTY);
 		txtDataNastere.setText(EMPTY);
 		txtCuvinteCheie.setText(EMPTY);
-		
+
 		tbDetalii.getItems().clear();
 	}
 
 	private void cautare(ActionEvent event) {
-		
+
 		String stxtNume = "";
 		stxtNume = txtNume.getText();
 
@@ -240,7 +262,7 @@ public class ovaController {
 			showMessageNoDataToFind();
 			return;
 		}
-		
+
 		addPerson(event);
 	}
 
@@ -306,7 +328,7 @@ public class ovaController {
 		// Handle Button Cautare event.
 		btnCautare.setOnAction((event) -> {
 			cautare(event);
-			
+
 			System.out.println("ButtonCautare action\n");
 			// outputTextArea.appendText("Button Action\n");
 		});
@@ -440,11 +462,8 @@ public class ovaController {
 	private void fillTable() {
 		// TableView tab = new TableView();
 		// tbDetalii = new TableView();
-		Person person = new Person("10", "John", "Doe",
-				"01.12.1982");
-//		tbDetalii.getItems().add(person);
-		
-		
+		Person person = new Person("10", "John", "Doe", "01.12.1982");
+		// tbDetalii.getItems().add(person);
 
 	}
 
