@@ -2,6 +2,7 @@ package com.ase.ova.ro;
 
 import java.io.BufferedWriter;
 
+import com.ase.ova.dao.ro.Person;
 import com.ase.ova.utils.ro.FileOperation;
 
 import javafx.application.Platform;
