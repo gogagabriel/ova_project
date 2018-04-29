@@ -10,7 +10,8 @@
 <ScrollPane prefHeight="3000.0" prefViewportHeight="600.0"
 	prefViewportWidth="800.0" prefWidth="1000.0"
 	style="-fx-background-color: white;" stylesheets="@bootstrap3.css"
-	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"  
+	fx:controller="com.ase.ova.ro.ovaController">
 
 	<HTMLEditor
 		htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;"
@@ -23,21 +24,23 @@
 
 			<!-- TABUL CAUTARE ANGAJATI -->
 			<Tab text="Căutare angajați">
-				<AnchorPane minHeight="0.0" prefHeight="60.0">
+				<AnchorPane minHeight="0.0" prefHeight="60.0" >
 
 					<!-- ADAUGARE MENIU -->
 					<MenuBar layoutY="5">
 						<Menu mnemonicParsing="false" text="Fișier">
+						    <MenuItem mnemonicParsing="false" text="Deschidere" />
+						    <MenuItem mnemonicParsing="false" text="Salvare căutare" />
 							<MenuItem mnemonicParsing="false" text="Ieșire" />
 						</Menu>
-						<Menu mnemonicParsing="false" text="Salvare căutare">
-							<MenuItem mnemonicParsing="false"
-								text="Încărcare căutare" />
-						</Menu>
+						
 						<Menu mnemonicParsing="false" text="Ajutor">
 							<MenuItem mnemonicParsing="false" text="Despre" />
 						</Menu>
 					</MenuBar>
+					
+					
+	
 
 					<!-- Cautare -->
 					<HBox prefHeight="79.0" layoutX="0" layoutY="135">
@@ -67,7 +70,25 @@
 						</TextField>
 
 						<!-- Adăugare butoane căutare și ștergere -->
-						<Button mnemonicParsing="false" text="Căutare">
+
+	<!-- <AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320"
+		xmlns:fx="http://javafx.com/fxml" fx:controller="src/Controller">
+		<children>
+		<Button mnemonicParsing="false" text="Căutare" onAction="#test" >
+							<styleClass>
+								<String fx:value="danger" />
+								<String fx:value="action-btn" />
+							</styleClass>
+							<HBox.margin>
+								<Insets right="-1.0" />
+							</HBox.margin>
+						</Button>
+			
+		</children>
+	</AnchorPane>
+						 -->
+						
+						<Button mnemonicParsing="false" text="Căutare" fx:id="btnCautare" >
 							<styleClass>
 								<String fx:value="danger" />
 								<String fx:value="action-btn" />
@@ -77,7 +98,7 @@
 							</HBox.margin>
 						</Button>
 
-						<Button mnemonicParsing="false" text="Ștergere ">
+						<Button mnemonicParsing="false" text="Ștergere " fx:id="btnStergere">
 							<styleClass>
 								<String fx:value="warning" />
 
